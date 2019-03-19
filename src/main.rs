@@ -1,8 +1,13 @@
 extern crate notify;
 extern crate reqwest;
+extern crate serde;
+extern crate serde_derive;
+extern crate serde_json;
+extern crate open;
 
 mod key;
 
+use serde_derive::{Deserialize};
 use notify::{Watcher, RecursiveMode, RawEvent, raw_watcher};
 use std::sync::mpsc::channel;
 // use std::thread;
@@ -33,16 +38,21 @@ fn main() {
     }
 }
 
+// TODO:
 fn is_image_path (path: &str) -> bool {
     path.ends_with(".png") ||
     path.ends_with(".gif") ||
     path.ends_with(".jpg") || path.ends_with(".jpeg")
 }
 
+#[derive(Deserialize, Debug)]
+struct GyazoImage {
+    permalink_url: String,
+}
+
 // https://gyazo.com/api/docs/image
 fn uploader(path: &str) {
     let client = reqwest::Client::new();
-    // TODO: ファイル名くらい載せたい
     let form = reqwest::multipart::Form::new()
         .text("access_token", GYAZO_ACCESS_TOKEN)
         .text("desc", SCREENSHOT_DESC)
@@ -50,13 +60,17 @@ fn uploader(path: &str) {
         .unwrap();
 
     let api_url = "https://upload.gyazo.com/api/upload";
-    let res = client.post(api_url)
+    let mut res = client.post(api_url)
         .multipart(form)
         .send()
         .unwrap();
 
     if res.status().is_success() {
-        println!("uploaded: {:?}", res);
+        if let Ok(data) = res.json::<GyazoImage>() {
+            let image_url = data.permalink_url;
+            println!("uploaded!: {}", image_url);
+            open::that(image_url).unwrap();
+        }
     } else {
         panic!("Something else happened. Status: {:?}", res.status());
     }
