@@ -54,6 +54,11 @@ fn uploader(path: &str) {
         .multipart(form)
         .send()
         .unwrap();
-    println!("uploaded: {:?}", res);
+
+    if res.status().is_success() {
+        println!("uploaded: {:?}", res);
+    } else {
+        panic!("Something else happened. Status: {:?}", res.status());
+    }
 }
 
