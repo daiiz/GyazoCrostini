@@ -25,7 +25,7 @@ src/main.rs の`SCREENSHOT_DIR`を、先ほど指定した保存先パスに書�
 
 ## Build
 ```
-$ cargo build
+$ cargo build --release
 ```
 
 ## Run

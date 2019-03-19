@@ -7,5 +7,5 @@ then
 fi
 
 echo "gyazo_slate running."
-cargo run
+./target/release/gyazo_slate
 echo "gyazo_slate done."
