@@ -6,7 +6,7 @@ UNOFFICIAL/EXPERIMENTAL
 
 ## Chrome OS Settings
 ダウンロードファイルの保存先として、「Linux ファイル」下を指定する。\
-このディレクトリを監視して、画像ぽいファイルが保存されたら都度Gyazoにuploadしていく。
+このディレクトリを監視しておき、OS標準スクリーンショット機能などによって保存された画像ぽいファイルを都度Gyazoにuploadしていく。
 
 ![](https://gyazo.com/1de432aa86f6cba5b2aa06f2bb646811/raw)
 
