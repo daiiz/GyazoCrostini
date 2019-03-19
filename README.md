@@ -12,7 +12,7 @@ UNOFFICIAL/EXPERIMENTAL
 
 ## Preparation
 ### Gyazo access token
-Gyazoアプリを登録して、access tokenを取得する。取り扱い注意。
+Gyazoアプリを登録して、access tokenを取得する。取り扱い注意。\
 https://gyazo.com/oauth/applications
 
 src/key.rs に、Gyazo access tokenを記述する。
@@ -21,7 +21,7 @@ pub(crate) const GYAZO_ACCESS_TOKEN: &'static str = "your-gyazo-access-token";
 ```
 
 ### SCREENSHOT_DIR
-src/main.rs の`SCREENSHOT_DIR`にChrome OSに指定した保存先パスに書き換える。
+src/main.rs の`SCREENSHOT_DIR`を、先ほど指定した保存先パスに書き換える。
 
 ### SCREENSHOT_DEVICE_PIXEL_RATIO
 (うまく効かない。今後の課題。) \
