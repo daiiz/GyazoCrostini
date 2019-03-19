@@ -59,8 +59,6 @@ fn uploader(path: &str) {
         .multipart(form)
         .send()
         .unwrap();
-
-    println!("uploaded. {:?}", GYAZO_ACCESS_TOKEN);
-    println!("{:?}", res);
+    println!("uploaded: {:?}", res);
 }
 
