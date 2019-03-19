@@ -1,0 +1,9 @@
+[package]
+name = "gyazo_slate"
+version = "0.1.0"
+authors = ["daiiz <da.iz.mg@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+reqwest = "0.9.11"
+notify = "4.0.0"
