@@ -18,6 +18,8 @@ https://gyazo.com/oauth/applications
 src/key.rs に、Gyazo access tokenを記述する。
 ```rust
 pub(crate) const GYAZO_ACCESS_TOKEN: &'static str = "your-gyazo-access-token";
+pub(crate) const SCREENSHOT_DIR: &'static str = "/home/daizmg/CrDownloads";
+pub(crate) const SCREENSHOT_DESC: &'static str = "uploaded from #PixelSlate";
 ```
 
 ### SCREENSHOT_DIR

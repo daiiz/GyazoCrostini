@@ -8,9 +8,6 @@ use std::sync::mpsc::channel;
 // use std::thread;
 use key::*;
 
-const SCREENSHOT_DIR: &'static str = "/home/daizmg/CrDownloads";
-const SCREENSHOT_DESC: &'static str = "uploaded from #PixelSlate";
-
 fn main() {
     let (tx, rx) = channel();
     let mut watcher = raw_watcher(tx).unwrap();
