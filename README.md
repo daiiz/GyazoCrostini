@@ -36,5 +36,5 @@ $ cargo build
 
 ## Run
 ```
-$ cargo run
+$ sh start.sh
 ```
