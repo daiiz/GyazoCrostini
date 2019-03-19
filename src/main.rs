@@ -9,7 +9,6 @@ use std::sync::mpsc::channel;
 use key::*;
 
 const SCREENSHOT_DIR: &'static str = "/home/daizmg/CrDownloads";
-const SCREENSHOT_DEVICE_PIXEL_RATIO: &'static str = "2.25";
 const SCREENSHOT_DESC: &'static str = "uploaded from #PixelSlate";
 
 fn main() {
@@ -49,7 +48,6 @@ fn uploader(path: &str) {
     // TODO: ファイル名くらい載せたい
     let form = reqwest::multipart::Form::new()
         .text("access_token", GYAZO_ACCESS_TOKEN)
-        .text("scale", SCREENSHOT_DEVICE_PIXEL_RATIO)
         .text("desc", SCREENSHOT_DESC)
         .file("imagedata", path)
         .unwrap();

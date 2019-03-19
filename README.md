@@ -23,12 +23,6 @@ pub(crate) const GYAZO_ACCESS_TOKEN: &'static str = "your-gyazo-access-token";
 ### SCREENSHOT_DIR
 src/main.rs の`SCREENSHOT_DIR`を、先ほど指定した保存先パスに書き換える。
 
-### SCREENSHOT_DEVICE_PIXEL_RATIO
-(うまく効かない。今後の課題。) \
-Pixel Slate以外のChrome OSマシンを使用している場合は適切な値を設定する。
-Chrome Dev Toolsにて`window.devicePixelRatio`を実行すると確認できる。
-
-
 ## Build
 ```
 $ cargo build
