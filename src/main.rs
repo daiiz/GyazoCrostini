@@ -72,7 +72,7 @@ fn uploader(path: &str) {
             open::that(image_url).unwrap();
         }
     } else {
-        panic!("Something else happened. Status: {:?}", res.status());
+        // panic!("Something else happened. Status: {:?}", res.status());
     }
 }
 
