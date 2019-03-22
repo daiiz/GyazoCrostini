@@ -6,6 +6,8 @@ then
   exit 1;
 fi
 
+filepath="$(realpath ./target/release/gyazo_slate)"
+
 echo "gyazo_slate running."
-./target/release/gyazo_slate
+$filepath
 echo "gyazo_slate done."
